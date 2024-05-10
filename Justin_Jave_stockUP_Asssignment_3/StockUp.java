@@ -59,8 +59,9 @@ public class StockUp {
               double purchaseAmount = stock.getPrice() * qty; 
               portfolio.buyStock(stock, qty, purchaseAmount);
               goBack = !goBack;
-              System.out.println(ANSI_YELLOW + "Your purchash of " + qty + 
-              " units of " + stock.getName() + 
+              System.err.println();
+              System.out.println(ANSI_YELLOW + "Your purchash of " + qty + ANSI_YELLOW +
+              " units of " + stock.getName() + ANSI_YELLOW +
               " for a total of $" + purchaseAmount + " is successful.");
               
             } // if

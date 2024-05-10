@@ -4,6 +4,12 @@ import java.util.Scanner;
 
 public class Validator {
   
+  public static final String ANSI_RESET = "\u001B[0m";
+  public static final String ANSI_YELLOW = "\u001B[33m";
+  public static final String ANSI_GREEN = "\u001B[32m";
+  public static final String ANSI_CYAN = "\u001B[36m";
+  public static final String ANSI_RED = "\u001B[31m";
+  
   public Validator() {
     // do nothing
   }
@@ -19,11 +25,11 @@ public class Validator {
           valid = true;
         }
         else {
-          System.out.println("Selection out of range!");
+          System.out.println(ANSI_RED + "Selection out of range!");
         }
       }
       catch (Exception e) {
-        System.out.println("Please read the menu and make a valid selection!");
+        System.out.println(ANSI_RED + "Please read the menu and make a valid selection!");
         valid = false; // just in case
       } 
       finally { // runs if there's an error or NOT!! always runs
@@ -44,11 +50,11 @@ public class Validator {
           valid = true;
         }
         else {
-          System.out.println("Enter a postive number!");
+          System.out.println(ANSI_RED + "Deposit amount must be a positive $ amount");
         }
       } 
       catch (Exception e) {
-        System.out.println("Please read the directions!");
+        System.out.println(ANSI_RED + "Please enter a valid deposit amount!");
         valid = false; // just in case
       } 
       finally { // runs if there's an error or NOT!! always runs
@@ -65,14 +71,14 @@ public class Validator {
         try {
             amount = input.nextDouble();
             if (amount > minDeposit) {
-                valid = true;
+                valid = true; // just in case
             } else {
-                System.out.println("Deposit amount must be a positive $ amount");
+                System.out.println(ANSI_RED + "Deposit amount must be a positive $ amount");
             }
         } catch (Exception e) {
-            System.out.println("Please enter a valid deposit amount!");
+            System.out.println(ANSI_RED + "Please enter a valid deposit amount!");
             valid = false;
-        } finally {
+        } finally { // runs if there's an error or NOT!! always runs
             input.nextLine(); // Clear the input buffer
         }
     }

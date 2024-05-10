@@ -34,7 +34,12 @@ public class Ink {
 
 
     System.out.println();  
-    System.out.println(ANSI_YELLOW + "\nHow many units of this stock would you like?? " + ANSI_RESET);
+    System.out.println(ANSI_RED + 
+    "-------------------------------------------------------------------------" + ANSI_RESET);
+    System.out.println(ANSI_YELLOW + "\nHow many units of " + stock.getName() + ANSI_YELLOW + " stock would you like to buy? " + ANSI_RESET);
+    System.out.println();  
+    System.out.println(ANSI_RED + 
+    "-------------------------------------------------------------------------" + ANSI_RESET);
   } // printStock()
 
   public void printPortfolio(ArrayList<Stock> stocks, double networth, double balance) {
@@ -57,7 +62,8 @@ public class Ink {
       stock.getName(), stock.getSymbol(), stock.getPrice(), stock.getQty(), totalStockValue);
     }
     networth = balance + totalPortfolioValue;
-    System.out.println(ANSI_RED + "-------------------------------------------------------------------------" + ANSI_RESET);
+    System.out.println(ANSI_RED + 
+    "-------------------------------------------------------------------------" + ANSI_RESET);
     System.out.println();
     System.out.printf(ANSI_YELLOW + "Balance: $" + "%.2f\n" + ANSI_RESET, balance);
     System.out.printf(ANSI_YELLOW + "Networth: $" + "%.2f\n" + ANSI_RESET, networth);
@@ -67,26 +73,34 @@ public class Ink {
   } // printPortfolio()
 
   public void printMarket(ArrayList<Stock> stocks, Scanner input) {
-    System.out.println(ANSI_RED + "-------------------------------------------------------------------------" + ANSI_RESET);
+    System.out.println(ANSI_RED + 
+    "-------------------------------------------------------------------------" + ANSI_RESET);
     System.out.println(ANSI_YELLOW + "⚡️MARKET " + ANSI_RESET);
     System.out.println(ANSI_RED + "-------------------------------------------------------------------------" + ANSI_RESET);
     System.out.printf(ANSI_YELLOW + "%-7s %-10s %-10s %-25s\n" + ANSI_RESET, "Index", "Name", "Symbol", "Price ($)");
-    System.out.println(ANSI_RED + "-------------------------------------------------------------------------" + ANSI_RESET);
+    System.out.println(ANSI_RED + 
+    "-------------------------------------------------------------------------" + ANSI_RESET);
     for(int i = 0; i < stocks.size(); i++) {
         Stock stock = stocks.get(i);
-        System.out.printf(ANSI_YELLOW + "%-7d %-15s %-10s %-12.2f\n",
+        System.out.printf(ANSI_YELLOW + "%-7d %-15s %-10s %-12.2f\n" + ANSI_RESET,
             i + 1, stock.getName(), stock.getSymbol(), stock.getPrice());
+
+
     }
-    System.out.println(ANSI_RED + "-------------------------------------------------------------------------" + ANSI_RESET);
-    System.out.print(ANSI_YELLOW + "Which stock would you like to buy?: " + ANSI_RESET);
-      
+    System.out.println(ANSI_RED + 
+    "-------------------------------------------------------------------------" + ANSI_RESET);
+    System.out.println(ANSI_YELLOW + "Which stock would you like to buy?: " + ANSI_RESET);
+    System.out.println(ANSI_RED + 
+    "-------------------------------------------------------------------------" + ANSI_RESET);  
   }
   
   public void printMenu() {
-    System.out.println(ANSI_RED + "--------------------------------------------------------------" + ANSI_RESET);
+    System.out.println(ANSI_RED + 
+    "--------------------------------------------------------------" + ANSI_RESET);
     System.out.print(ANSI_YELLOW + "⚡️MENU " + ANSI_RESET);
     System.out.printf("%s(1) Portfolio  (2) Stocks  (3) Add Funds  (4) Exit%s\n", ANSI_YELLOW, ANSI_RESET);
-    System.out.println(ANSI_RED + "--------------------------------------------------------------" + ANSI_RESET);
+    System.out.println(ANSI_RED + 
+    "--------------------------------------------------------------" + ANSI_RESET);
 } // printMenu()
 
 
@@ -102,7 +116,7 @@ public class Ink {
 }
 
 public void printGoodday() {
-  System.out.println(ANSI_YELLOW + "$$$ Richer Every Day with stockUP $$$\n");
+  System.out.println(ANSI_YELLOW + "$$$ Richer Every Day with SockUP $$$\n");
 }
 
 } // class
