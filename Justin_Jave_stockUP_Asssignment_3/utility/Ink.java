@@ -29,10 +29,11 @@ public class Ink {
   public void printStock(Stock stock) {
     System.out.println(ANSI_RED + 
     "-------------------------------------------------------------------------" + ANSI_RESET);
-    System.out.printf(ANSI_BLUE + "Name: %-10s\nSymbol: %-10s\nPrice: $%.2f",
-      stock.getName(), stock.getSymbol(), stock.getPrice());
+    System.out.printf(ANSI_YELLOW + "Name: %-10s\nSymbol: %-10s\nPrice: $%.2f" + ANSI_RESET,
+    stock.getName(), stock.getSymbol(), stock.getPrice());
 
-    System.err.println();  
+
+    System.out.println();  
     System.out.println(ANSI_YELLOW + "\nHow many units of this stock would you like?? " + ANSI_RESET);
   } // printStock()
 
